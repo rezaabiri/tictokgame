@@ -1,4 +1,4 @@
-package com.tictokgame.tictokgame
+package com.funtictac.funtictacgame
 
 import io.flutter.embedding.android.FlutterActivity
 
