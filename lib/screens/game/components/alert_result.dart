@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:tictokgame/constants.dart';
+import 'package:funtictac/constants.dart';
 
 class MyAlert {
   static TextStyle textStyle = TextStyle(

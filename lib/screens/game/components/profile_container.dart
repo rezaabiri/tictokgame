@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tictokgame/constants.dart';
-import 'package:tictokgame/models/player.dart';
-import 'package:tictokgame/models/settings.dart';
-import 'package:tictokgame/screens/game/components/score_container.dart';
+import 'package:funtictac/constants.dart';
+import 'package:funtictac/models/player.dart';
+import 'package:funtictac/models/settings.dart';
+import 'package:funtictac/screens/game/components/score_container.dart';
 
 class MyProfileContainer extends StatelessWidget {
   final String symbol;

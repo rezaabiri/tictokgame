@@ -1,7 +1,7 @@
 import 'package:anitex/anitex.dart';
 import 'package:flutter/material.dart';
-import 'package:tictokgame/constants.dart';
-import 'package:tictokgame/models/responsive_ui.dart';
+import 'package:funtictac/constants.dart';
+import 'package:funtictac/models/responsive_ui.dart';
 
 class CardGestureDetector extends StatelessWidget {
   final Function() onTapFunction;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tictokgame/utilities/splash_screen.dart';
+import 'package:funtictac/utilities/splash_screen.dart';
 
 import 'models/audio_resume.dart';
 

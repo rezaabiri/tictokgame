@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tictokgame/constants.dart';
-import 'package:tictokgame/models/settings.dart';
-import 'package:tictokgame/utilities/audio_player.dart';
+import 'package:funtictac/constants.dart';
+import 'package:funtictac/models/settings.dart';
+import 'package:funtictac/utilities/audio_player.dart';
 
 class VolumeSettings extends StatefulWidget {
   @override

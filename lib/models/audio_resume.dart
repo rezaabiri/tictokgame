@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:tictokgame/utilities/audio_player.dart';
-import 'package:tictokgame/models/settings.dart';
+import 'package:funtictac/utilities/audio_player.dart';
+import 'package:funtictac/models/settings.dart';
 
 class Handler extends WidgetsBindingObserver {
   @override

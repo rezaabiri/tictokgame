@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tictokgame/constants.dart';
-import 'package:tictokgame/screens/pickup/pickup_screen.dart';
-import 'package:tictokgame/models/responsive_ui.dart';
-import 'package:tictokgame/widgets/material_button.dart';
+import 'package:funtictac/constants.dart';
+import 'package:funtictac/screens/pickup/pickup_screen.dart';
+import 'package:funtictac/models/responsive_ui.dart';
+import 'package:funtictac/widgets/material_button.dart';
 
 class MyScaffoldBody extends StatelessWidget {
   const MyScaffoldBody({super.key});

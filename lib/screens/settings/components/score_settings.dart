@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tictokgame/models/settings.dart';
-import 'package:tictokgame/screens/settings/components/material_button.dart';
+import 'package:funtictac/models/settings.dart';
+import 'package:funtictac/screens/settings/components/material_button.dart';
 
 class ScoreSettings extends StatefulWidget {
   final int index;

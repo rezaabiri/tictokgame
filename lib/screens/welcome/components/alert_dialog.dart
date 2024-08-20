@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:tictokgame/constants.dart';
-import 'package:tictokgame/screens/settings/settings_screen.dart';
+import 'package:funtictac/constants.dart';
+import 'package:funtictac/screens/settings/settings_screen.dart';
 
 class MyAlertDialog {
   static AlertStyle alertStyle = AlertStyle(

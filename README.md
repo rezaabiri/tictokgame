@@ -1,4 +1,4 @@
-# tictokgame
+# funtictac
 
 A new Flutter project.
 

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tictokgame/screens/settings/components/score_settings.dart';
-import 'package:tictokgame/screens/settings/components/toggle_buttons.dart';
-import 'package:tictokgame/screens/settings/components/volume_settings.dart';
-import 'package:tictokgame/screens/settings/components/player_settings.dart';
+import 'package:funtictac/screens/settings/components/score_settings.dart';
+import 'package:funtictac/screens/settings/components/toggle_buttons.dart';
+import 'package:funtictac/screens/settings/components/volume_settings.dart';
+import 'package:funtictac/screens/settings/components/player_settings.dart';
 
 class SettingsScreen extends StatelessWidget {
   @override

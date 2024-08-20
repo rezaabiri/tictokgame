@@ -1,17 +1,17 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:tictokgame/constants.dart';
-import 'package:tictokgame/models/settings.dart';
-import 'package:tictokgame/screens/game/components/alert_result.dart';
-import 'package:tictokgame/screens/game/components/profile_container.dart';
-import 'package:tictokgame/screens/game/components/result_container.dart';
-import 'package:tictokgame/screens/game/components/card_gesture_detector.dart';
-import 'package:tictokgame/models/player.dart';
-import 'package:tictokgame/models/responsive_ui.dart';
-import 'package:tictokgame/screens/game/components/timer.dart';
-import 'package:tictokgame/screens/game/components/score_container.dart';
-import 'package:tictokgame/utilities/audio_player.dart';
-import 'package:tictokgame/screens/game/components/text_button.dart';
+import 'package:funtictac/constants.dart';
+import 'package:funtictac/models/settings.dart';
+import 'package:funtictac/screens/game/components/alert_result.dart';
+import 'package:funtictac/screens/game/components/profile_container.dart';
+import 'package:funtictac/screens/game/components/result_container.dart';
+import 'package:funtictac/screens/game/components/card_gesture_detector.dart';
+import 'package:funtictac/models/player.dart';
+import 'package:funtictac/models/responsive_ui.dart';
+import 'package:funtictac/screens/game/components/timer.dart';
+import 'package:funtictac/screens/game/components/score_container.dart';
+import 'package:funtictac/utilities/audio_player.dart';
+import 'package:funtictac/screens/game/components/text_button.dart';
 
 Player player = Player();
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tictokgame/constants.dart';
+import 'package:funtictac/constants.dart';
 
 class MyMaterialButton extends StatelessWidget {
   final int index;

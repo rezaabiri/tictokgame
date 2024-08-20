@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tictokgame/constants.dart';
-import 'package:tictokgame/models/settings.dart';
+import 'package:funtictac/constants.dart';
+import 'package:funtictac/models/settings.dart';
 
 class PlayerSettings extends StatefulWidget {
   final int playerIndex;

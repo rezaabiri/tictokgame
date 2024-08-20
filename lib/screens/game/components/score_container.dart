@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tictokgame/constants.dart';
+import 'package:funtictac/constants.dart';
 
 class MyScoreContainer extends StatelessWidget {
   final String text;
