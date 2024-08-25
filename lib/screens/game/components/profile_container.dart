@@ -9,7 +9,7 @@ class MyProfileContainer extends StatelessWidget {
   final Color cardColor;
   final int playerIndex;
 
-  const MyProfileContainer({required this.playerIndex, required this.symbol, required this.cardColor});
+  const MyProfileContainer({super.key, required this.playerIndex, required this.symbol, required this.cardColor});
 
   @override
   Widget build(BuildContext context) {

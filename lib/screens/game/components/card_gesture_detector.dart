@@ -8,7 +8,7 @@ class CardGestureDetector extends StatelessWidget {
   final String boxSide;
   final Color cardColor;
 
-  const CardGestureDetector({required this.onTapFunction, required this.boxSide, required this.cardColor});
+  const CardGestureDetector({super.key, required this.onTapFunction, required this.boxSide, required this.cardColor});
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -36,10 +36,10 @@ class CardGestureDetector extends StatelessWidget {
                         : boxSide == 'X'
                             ? kXColor
                             : kOColor,
-                    fontSize: constraints.maxWidth * 0.19,
+                    fontSize: constraints.maxWidth * 0.20,
                     fontWeight: FontWeight.bold,
                     fontFamily: boxSide == 'X' ? 'Carter' : 'Paytone',
-                    height: boxSide == 'X' ? 1.4 : 2.0,
+                    height: 1.5
                   ),
                 ),
               ),

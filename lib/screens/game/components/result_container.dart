@@ -10,7 +10,7 @@ import 'package:funtictac/models/responsive_ui.dart';
 class MyResultContainer extends StatelessWidget {
   final Player player;
   final Function() onPressed;
-  const MyResultContainer({required this.player, required this.onPressed});
+  const MyResultContainer({super.key, required this.player, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -40,12 +40,12 @@ class MyResultContainer extends StatelessWidget {
               )),
           const SizedBox(height: 20.0),
           MaterialButtonWidget(
-            text: 'Play Again',
+            text: 'بازی دوباره',
             textSize: ResponsiveUI.getFontSize(28.0),
             onPressed: onPressed,
           ),
           MaterialButtonWidget(
-            text: 'Home',
+            text: 'خانه',
             textSize: ResponsiveUI.getFontSize(23.0),
             onPressed: () {
               player.resetData();

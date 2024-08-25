@@ -8,7 +8,7 @@ class MyGestureDetector extends StatelessWidget {
   final String text;
   final Function() onTapFunction;
 
-  const MyGestureDetector({required this.onTapFunction, required this.containerColor, required this.text});
+  const MyGestureDetector({super.key, required this.onTapFunction, required this.containerColor, required this.text});
 
   @override
   Widget build(BuildContext context) {

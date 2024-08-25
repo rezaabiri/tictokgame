@@ -7,6 +7,8 @@ import 'package:funtictac/screens/game/game_screen.dart';
 import 'package:funtictac/screens/pickup/gesture_detector.dart';
 
 class PickUpScreen extends StatefulWidget {
+  const PickUpScreen({super.key});
+
   @override
   _PickUpScreenState createState() => _PickUpScreenState();
 }
@@ -26,8 +28,9 @@ class _PickUpScreenState extends State<PickUpScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            const SizedBox(height: 16,),
             Text(
-              'Choose a side',
+              'یک مهره انتخاب کنید',
               textAlign: TextAlign.center,
               style: kTextStyle.copyWith(fontSize: ResponsiveUI.getFontSize(30.0)),
             ),
@@ -42,9 +45,9 @@ class _PickUpScreenState extends State<PickUpScreen> {
               text: "O",
             ),
             MaterialButtonWidget(
-              text: 'Start',
+              text: 'شروع بازی',
               textSize: ResponsiveUI.getFontSize(30.0),
-              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => GameScreen())),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const GameScreen())),
             )
           ],
         ),

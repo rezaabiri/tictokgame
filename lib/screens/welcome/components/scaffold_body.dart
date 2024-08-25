@@ -14,12 +14,12 @@ class MyScaffoldBody extends StatelessWidget {
         children: [
           Expanded(child: _buildRichText(context)),
           MaterialButtonWidget(
-            text: 'Pick a side',
+            text: 'انتخاب مهره',
             textSize: ResponsiveUI.getFontSize(35.0),
             textPadding: 12.0,
             onPressed: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => PickUpScreen()),
+              MaterialPageRoute(builder: (context) => const PickUpScreen()),
             ),
           )
         ],

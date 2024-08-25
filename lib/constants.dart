@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 
-const kBackgroundColor = Color(0xFF422BA7);
+const kBackgroundColor = Color(0xFF284B63);
 const kTextColor = Colors.white;
 
-const kXColor = Color(0xFFFF4B4B);
+const kXColor = Color(0xFFE63946);
 const kOColor = Color(0xFFFFCA26);
 
-const kContainerColor = Color(0xFF6649C4);
-const kContainerCardColor = Color(0xFF28175C);
-const kWinnerCardColor = Color(0xFF5F82DE);
+const kContainerColor = Color(0xFFBFC0C0);
+const kContainerCardColor = Color(0xFF2D3142);
+const kWinnerCardColor = Color(0xFF00BBF9);
 
-const kActiveCardColor = Color(0xFF9b70e5);
+const kActiveCardColor = Color(0xff3f88c5);
 
 const kTextStyle = TextStyle(
   color: kTextColor,
   fontSize: 50.0,
   fontWeight: FontWeight.w500,
-  fontFamily: 'Paytone',
+  fontFamily: 'morvarid',
 );
 
 const kXTextStyle = TextStyle(

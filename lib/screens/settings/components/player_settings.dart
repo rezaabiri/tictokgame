@@ -4,7 +4,7 @@ import 'package:funtictac/models/settings.dart';
 
 class PlayerSettings extends StatefulWidget {
   final int playerIndex;
-  const PlayerSettings({required this.playerIndex});
+  const PlayerSettings({super.key, required this.playerIndex});
 
   @override
   _PlayerSettingsState createState() => _PlayerSettingsState();
@@ -25,16 +25,19 @@ class _PlayerSettingsState extends State<PlayerSettings> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          Settings.playerRoleNames[widget.playerIndex],
-          style: const TextStyle(fontSize: 19.0),
-        ),
-        const SizedBox(width: 10.0),
-        SizedBox(width: 150.0, height: 39.0, child: _buildTextField()),
-      ],
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            Settings.playerRoleNames[widget.playerIndex],
+            style: const TextStyle(fontSize: 19.0, fontFamily: 'morvarid'),
+          ),
+          const SizedBox(width: 10.0),
+          SizedBox(width: 150.0, height: 39.0, child: _buildTextField()),
+        ],
+      ),
     );
   }
 
@@ -44,15 +47,17 @@ class _PlayerSettingsState extends State<PlayerSettings> {
       maxLength: 10,
       textCapitalization: TextCapitalization.words,
       controller: Settings.textControllers[widget.playerIndex],
+      style: const TextStyle(fontFamily: 'morvarid', color: Colors.black),
+      textAlign: TextAlign.center,
       decoration: InputDecoration(
         filled: true,
         fillColor: kContainerColor,
         focusColor: Colors.red,
         counterText: '',
         contentPadding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 10.0),
-        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white), borderRadius: BorderRadius.circular(5.0)),
+        focusedBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.white), borderRadius: BorderRadius.circular(5.0)),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(width: 0.0),
+          borderSide: const BorderSide(width: 0.0),
           borderRadius: BorderRadius.circular(5.0),
         ),
       ),

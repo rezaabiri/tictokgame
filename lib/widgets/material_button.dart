@@ -12,18 +12,21 @@ class MaterialButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
-      child: MaterialButton(
-        padding: EdgeInsets.all(textPadding ?? 8.0),
-        textColor: kTextColor,
-        color: kContainerCardColor,
-        minWidth: double.infinity,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-        onPressed: onPressed,
-        child: Text(
-          text,
-          style: TextStyle(fontFamily: 'Paytone', fontSize: textSize),
+    return SizedBox(
+      height: 100,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
+        child: MaterialButton(
+          padding: EdgeInsets.all(textPadding ?? 8.0),
+          textColor: kTextColor,
+          color: kContainerCardColor,
+          minWidth: double.infinity,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          onPressed: onPressed,
+          child: Text(
+            text,
+            style: TextStyle(fontFamily: 'morvarid', fontSize: textSize),
+          ),
         ),
       ),
     );

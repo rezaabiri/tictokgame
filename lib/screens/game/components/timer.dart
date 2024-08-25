@@ -4,7 +4,7 @@ class MyCountDownTimer extends StatelessWidget {
   final int seconds;
   final int maxSeconds;
 
-  const MyCountDownTimer({required this.seconds, required this.maxSeconds});
+  const MyCountDownTimer({super.key, required this.seconds, required this.maxSeconds});
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +17,10 @@ class MyCountDownTimer extends StatelessWidget {
           CircularProgressIndicator(
             value: 1 - seconds / maxSeconds,
             valueColor: const AlwaysStoppedAnimation(Colors.white),
-            backgroundColor: Colors.greenAccent,
+            backgroundColor: Colors.green,
+            strokeWidth: 7,
           ),
-          Center(child: Text('$seconds')),
+          Center(child: Text('$seconds', style: const TextStyle(fontWeight: FontWeight.bold),)),
         ],
       ),
     );

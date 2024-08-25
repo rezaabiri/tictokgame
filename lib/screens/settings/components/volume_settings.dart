@@ -5,6 +5,8 @@ import 'package:funtictac/models/settings.dart';
 import 'package:funtictac/utilities/audio_player.dart';
 
 class VolumeSettings extends StatefulWidget {
+  const VolumeSettings({super.key});
+
   @override
   _VolumeSettingsState createState() => _VolumeSettingsState();
 }
@@ -14,12 +16,13 @@ class _VolumeSettingsState extends State<VolumeSettings> {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      textDirection: TextDirection.rtl,
       children: [
-        const Text('Sound', style: TextStyle(fontSize: 19.0)),
+        const Text('صدای بازی', style: TextStyle(fontSize: 19.0, fontFamily: 'morvarid')),
         const SizedBox(width: 5.0),
         _buildSwitchButtons(0),
         const SizedBox(width: 10.0),
-        const Text('Music', style: TextStyle(fontSize: 19.0)),
+        const Text('آهنگ زمینه', style: TextStyle(fontSize: 19.0, fontFamily: 'morvarid')),
         const SizedBox(width: 5.0),
         _buildSwitchButtons(1),
       ],

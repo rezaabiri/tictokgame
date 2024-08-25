@@ -3,7 +3,7 @@ import 'package:funtictac/constants.dart';
 
 class MyScoreContainer extends StatelessWidget {
   final String text;
-  const MyScoreContainer(this.text);
+  const MyScoreContainer(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {

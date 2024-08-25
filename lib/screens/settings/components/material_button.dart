@@ -6,7 +6,7 @@ class MyMaterialButton extends StatelessWidget {
   final Icon icon;
   final Function()? onPressed;
 
-  const MyMaterialButton({required this.index, required this.icon, required this.onPressed});
+  const MyMaterialButton({super.key, required this.index, required this.icon, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,8 @@ class MyMaterialButton extends StatelessWidget {
       color: kBackgroundColor,
       disabledColor: const Color(0xFF5d5e60),
       disabledTextColor: kTextColor,
-      child: icon,
       onPressed: onPressed,
+      child: icon,
     );
   }
 }

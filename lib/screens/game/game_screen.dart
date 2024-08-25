@@ -16,6 +16,8 @@ import 'package:funtictac/screens/game/components/text_button.dart';
 Player player = Player();
 
 class GameScreen extends StatefulWidget {
+  const GameScreen({super.key});
+
   @override
   _GameScreenState createState() => _GameScreenState();
 }
@@ -50,10 +52,10 @@ class _GameScreenState extends State<GameScreen> {
   void resumeTimer() => setState(() => seconds = pauseSeconds);
 
   void startTimer() {
-    timer = Timer.periodic(Duration(seconds: 1), (_) {
-      if (seconds > 0 && seconds < 16)
+    timer = Timer.periodic(const Duration(seconds: 1), (_) {
+      if (seconds > 0 && seconds < 16) {
         setState(() => seconds--);
-      else if (seconds == 0) {
+      } else if (seconds == 0) {
         Player.player1 = !Player.player1;
         Player.changeProfileCardColor();
         resetTimer();
@@ -77,11 +79,11 @@ class _GameScreenState extends State<GameScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       MyTextButton(
-                        text: 'pause',
+                        text: 'توقف',
                         onPressed: () {
                           pauseTimer();
                           stopTimer();
-                          MyAlert.showAlert(context, 'Game Paused!', '⏸', 'Resume', () {
+                          MyAlert.showAlert(context, 'بازی متوقف شد!', '⏸', 'ادامه بازی', () {
                             Navigator.pop(context);
                             resumeTimer();
                             startTimer();
@@ -89,7 +91,7 @@ class _GameScreenState extends State<GameScreen> {
                         },
                       ),
                       MyTextButton(
-                        text: 'new',
+                        text: 'جدید',
                         onPressed: () {
                           resetTimer();
                           Player.resetStaticData();
@@ -195,13 +197,13 @@ class _GameScreenState extends State<GameScreen> {
     stopTimer();
     Player.finished = true;
     player.changeWinnerCardColor();
-    Future.delayed(Duration(milliseconds: 100), () => setState(() => player.updateCardColors()));
+    Future.delayed(const Duration(milliseconds: 100), () => setState(() => player.updateCardColors()));
     Future.delayed(
-      Duration(milliseconds: 800),
+      const Duration(milliseconds: 800),
       () => setState(() {
         Player.winner = true;
         Player.updateScores();
-        if (!Player.completed) MyAlert.showAlert(context, '${Player.getAlertTitle()}', '😎', 'Next Round', nextRoundFunc);
+        if (!Player.completed) MyAlert.showAlert(context, Player.getAlertTitle(), '😎', 'راند بعدی', nextRoundFunc);
         if (Settings.audioValues[0]) AudioPlayer.playResultSound(Player.winnerPlayer);
       }),
     );
@@ -210,11 +212,11 @@ class _GameScreenState extends State<GameScreen> {
   void drawLogic() {
     stopTimer();
     Future.delayed(
-      Duration(milliseconds: 800),
+      const Duration(milliseconds: 800),
       () => setState(() {
         Player.draw = true;
         Player.updateScores();
-        if (!Player.completed) MyAlert.showAlert(context, '${Player.getAlertTitle()}', '😔', 'Next Round', nextRoundFunc);
+        if (!Player.completed) MyAlert.showAlert(context, Player.getAlertTitle(), '😔', 'راند بعدی', nextRoundFunc);
         if (Settings.audioValues[0]) AudioPlayer.playResultSound(Player.winnerPlayer);
       }),
     );

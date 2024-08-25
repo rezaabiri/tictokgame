@@ -5,7 +5,7 @@ class MyTextButton extends StatelessWidget {
   final String text;
   final Function() onPressed;
 
-  const MyTextButton({required this.text, required this.onPressed});
+  const MyTextButton({super.key, required this.text, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +14,13 @@ class MyTextButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 13.0),
         elevation: 2.0,
         textStyle: const TextStyle(
-          fontSize: 16.0,
-          fontFamily: 'Paytone',
+          fontSize: 18.0,
+          fontFamily: 'morvarid',
           color: kTextColor
         ),
       ),
-      child: Text(text),
       onPressed: onPressed,
+      child: Text(text),
     );
   }
 }

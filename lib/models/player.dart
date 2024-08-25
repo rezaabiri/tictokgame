@@ -118,12 +118,12 @@ class Player {
   }
 
   static String getAlertTitle() {
-    if (winner) return p1 == side ? '${Settings.playerNames[0]} Wins!' : '${Settings.playerNames[1]} Wins!';
-    return 'Its a tie!';
+    if (winner) return p1 == side ? '${Settings.playerNames[0]} برنده شد!' : '${Settings.playerNames[1]} برنده شد!';
+    return 'کسی برنده نشد!';
   }
 
   static String getResultText() {
-    if (winner) return p1 == side ? '${Settings.playerNames[0]} Won' : '${Settings.playerNames[1]} Won';
+    if (winner) return p1 == side ? '${Settings.playerNames[0]} برنده شد' : '${Settings.playerNames[1]} برنده شد';
     return 'Draw!';
   }
 

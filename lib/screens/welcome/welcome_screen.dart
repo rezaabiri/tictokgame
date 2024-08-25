@@ -29,18 +29,21 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       backgroundColor: kBackgroundColor,
       resizeToAvoidBottomInset: false,
       appBar: _buildAppBar(context),
-      body: MyScaffoldBody(),
+      body: const MyScaffoldBody(),
     );
   }
 
   AppBar _buildAppBar(BuildContext context) {
     return AppBar(
       backgroundColor: kBackgroundColor,
-      title: Text(
-        'TIC TAC TOE',
-        textAlign: TextAlign.center,
-        style: kTextStyle.copyWith(
-          fontSize: ResponsiveUI.getFontSize(33.0),
+      title: Padding(
+        padding: const EdgeInsets.only(top: 16),
+        child: Text(
+          'فان تیک تاک',
+          textAlign: TextAlign.center,
+          style: kTextStyle.copyWith(
+            fontSize: ResponsiveUI.getFontSize(33.0),
+          ),
         ),
       ),
       leading: IconButton(
