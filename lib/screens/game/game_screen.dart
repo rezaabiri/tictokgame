@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'package:blurbox/blurbox.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:funtictac/constants.dart';
 import 'package:funtictac/models/settings.dart';
 import 'package:funtictac/screens/game/components/alert_result.dart';
@@ -66,64 +68,72 @@ class _GameScreenState extends State<GameScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBackgroundColor,
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Visibility(
-                visible: !Player.completed,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 30.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/bg6.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Visibility(
+                  visible: !Player.completed,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 30.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            pauseTimer();
+                            stopTimer();
+                            MyAlert.showAlert(context, 'بازی متوقف شد!', '⏸', 'ادامه بازی', () {
+                              Navigator.pop(context);
+                              resumeTimer();
+                              startTimer();
+                            });
+                          },
+                            child: Image.asset('assets/images/stop.png', width: 50,)
+                        ),
+                        InkWell(
+                          onTap: () {
+                            resetTimer();
+                            Player.resetStaticData();
+                            Player.updatePlayer1();
+                          },
+                            child: Image.asset('assets/images/renew.png', width: 50,)
+                        ),
+
+                      ],
+                    ),
+                  )),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  MyProfileContainer(playerIndex: 0, symbol: Player.p1, cardColor: Player.cardColorP1),
+                  const SizedBox(width: 15.0),
+                  Column(
                     children: [
-                      MyTextButton(
-                        text: 'توقف',
-                        onPressed: () {
-                          pauseTimer();
-                          stopTimer();
-                          MyAlert.showAlert(context, 'بازی متوقف شد!', '⏸', 'ادامه بازی', () {
-                            Navigator.pop(context);
-                            resumeTimer();
-                            startTimer();
-                          });
-                        },
+                      Visibility(
+                        visible: !Player.completed,
+                        child: MyCountDownTimer(seconds: seconds, maxSeconds: maxSeconds),
                       ),
-                      MyTextButton(
-                        text: 'جدید',
-                        onPressed: () {
-                          resetTimer();
-                          Player.resetStaticData();
-                          Player.updatePlayer1();
-                        },
-                      ),
+                      const SizedBox(height: 40.0),
+                      Text('D', style: kTextStyle.copyWith(fontSize: 30.0, color: Colors.blue)),
+                      MyScoreContainer('${Player.drawScore}'),
                     ],
                   ),
-                )),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                MyProfileContainer(playerIndex: 0, symbol: Player.p1, cardColor: Player.cardColorP1),
-                const SizedBox(width: 10.0),
-                Column(
-                  children: [
-                    Visibility(
-                      visible: !Player.completed,
-                      child: MyCountDownTimer(seconds: seconds, maxSeconds: maxSeconds),
-                    ),
-                    const SizedBox(height: 50.0),
-                    Text('D', style: kTextStyle.copyWith(fontSize: 30.0, color: Colors.blue)),
-                    MyScoreContainer('${Player.drawScore}'),
-                  ],
-                ),
-                const SizedBox(width: 10.0),
-                MyProfileContainer(playerIndex: 1, symbol: Player.p2, cardColor: Player.cardColorP2),
-              ],
-            ),
-            Player.completed ? _buildResultContainer() : Expanded(child: _buildGameContainer(context)),
-          ],
+                  const SizedBox(width: 10.0),
+                  MyProfileContainer(playerIndex: 1, symbol: Player.p2, cardColor: Player.cardColorP2),
+                ],
+              ),
+              Player.completed ? _buildResultContainer() : Expanded(child: _buildGameContainer(context)),
+            ],
+          ),
         ),
       ),
     );
@@ -137,10 +147,14 @@ class _GameScreenState extends State<GameScreen> {
           height: ResponsiveUI.getWidth(context, 30.0),
         ),
         decoration: BoxDecoration(
-          color: kContainerColor,
           borderRadius: BorderRadius.circular(20.0),
         ),
         child: Wrap(children: _buildCardButtons()),
+      ).blurry(
+        blur: 10,
+        color: Colors.white.withOpacity(0.3),
+        borderRadius: BorderRadius.circular(15),
+        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
       ),
     );
   }

@@ -24,11 +24,16 @@ class _PickUpScreenState extends State<PickUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      body: SafeArea(
+      body: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(image: AssetImage('assets/images/bg6.jpg'),
+                fit: BoxFit.cover
+            )
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const SizedBox(height: 16,),
+            const SizedBox(height: 40,),
             Text(
               'یک مهره انتخاب کنید',
               textAlign: TextAlign.center,
@@ -36,12 +41,12 @@ class _PickUpScreenState extends State<PickUpScreen> {
             ),
             MyGestureDetector(
               onTapFunction: () => setState(() => Player.pressed = Player.X),
-              containerColor: Player.pressed == Player.X ? kContainerCardColor : kBackgroundColor,
+              containerColor: Player.pressed == Player.X ? kContainerCardColor : Colors.white.withOpacity(0.5),
               text: "X",
             ),
             MyGestureDetector(
               onTapFunction: () => setState(() => Player.pressed = Player.O),
-              containerColor: Player.pressed == Player.O ? kContainerCardColor : kBackgroundColor,
+              containerColor: Player.pressed == Player.O ? kContainerCardColor : Colors.white.withOpacity(0.5),
               text: "O",
             ),
             MaterialButtonWidget(

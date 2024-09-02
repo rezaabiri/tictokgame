@@ -12,20 +12,29 @@ class MaterialButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 100,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
-        child: MaterialButton(
-          padding: EdgeInsets.all(textPadding ?? 8.0),
-          textColor: kTextColor,
-          color: kContainerCardColor,
-          minWidth: double.infinity,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-          onPressed: onPressed,
-          child: Text(
-            text,
-            style: TextStyle(fontFamily: 'morvarid', fontSize: textSize),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
+      child: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(image: AssetImage('assets/images/btn3.png'),
+              fit: BoxFit.contain
+            )
+        ),
+        child: SizedBox(
+          width: 400,
+          height: 100,
+          child: MaterialButton(
+            padding: EdgeInsets.all(textPadding ?? 8.0),
+            textColor: kTextColor,
+            highlightColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            splashColor: Colors.transparent,
+            disabledColor: Colors.transparent,
+            onPressed: onPressed,
+            child: Text(
+              text,
+              style: TextStyle(fontFamily: 'morvarid', fontSize: textSize),
+            ),
           ),
         ),
       ),

@@ -17,13 +17,15 @@ class MyProfileContainer extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            color: cardColor,
-            borderRadius: BorderRadius.circular(10.0),
-            border: cardColor == kActiveCardColor || cardColor == kWinnerCardColor ? Border.all(color: Colors.white) : null,
+            image: const DecorationImage(
+                image: AssetImage('assets/images/profile_con.png')
+            ),
+            borderRadius: BorderRadius.circular(5.0),
+            border: cardColor == kActiveCardColor || cardColor == kWinnerCardColor ? Border.all(color: Colors.white, width: 4) : null,
           ),
           constraints: const BoxConstraints.tightFor(
-            width: 110.0,
-            height: 135.0,
+            width: 100.0,
+            height: 145.0,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

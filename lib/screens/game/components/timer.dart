@@ -8,20 +8,30 @@ class MyCountDownTimer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 40.0,
-      height: 40.0,
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          CircularProgressIndicator(
-            value: 1 - seconds / maxSeconds,
-            valueColor: const AlwaysStoppedAnimation(Colors.white),
-            backgroundColor: Colors.green,
-            strokeWidth: 7,
-          ),
-          Center(child: Text('$seconds', style: const TextStyle(fontWeight: FontWeight.bold),)),
-        ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: SizedBox(
+        width: 60.0,
+        height: 60.0,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Image.asset('assets/images/progress.png', width: 100, height: 100,),
+            Positioned(
+              top: -2,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: CircularProgressIndicator(
+                  value: 1 - seconds / maxSeconds,
+                  valueColor: const AlwaysStoppedAnimation(Colors.white),
+                  backgroundColor: Colors.blueAccent,
+                  strokeWidth: 5,
+                ),
+              ),
+            ),
+            Center(child: Text('$seconds', style: const TextStyle(fontWeight: FontWeight.bold, fontFamily: 'morvarid'),)),
+          ],
+        ),
       ),
     );
   }

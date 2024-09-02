@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:funtictac/constants.dart';
 
 class MyScoreContainer extends StatelessWidget {
@@ -7,6 +8,7 @@ class MyScoreContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+/*
     return Container(
       margin: const EdgeInsets.all(10.0),
       width: 40.0,
@@ -20,6 +22,24 @@ class MyScoreContainer extends StatelessWidget {
         style: kTextStyle.copyWith(
           fontSize: 30.0,
         ),
+      ),
+    );
+*/
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Image.asset('assets/images/score_con.png', width: 50,),
+          Text(
+            text,
+            textAlign: TextAlign.center,
+            style: kTextStyle.copyWith(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold
+            ),
+          ),
+        ],
       ),
     );
   }
