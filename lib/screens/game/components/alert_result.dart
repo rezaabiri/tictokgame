@@ -5,7 +5,7 @@ import 'package:funtictac/constants.dart';
 
 class MyAlert {
   static TextStyle textStyle = const TextStyle(
-      fontSize: 35.0, fontFamily: 'morvarid', fontWeight: FontWeight.bold);
+      fontSize: 23.0, fontFamily: 'morvarid', fontWeight: FontWeight.bold);
 
   static Future showAlert(BuildContext context, String msg, String emoji,
       String btnTitle, Function() nextRoundFunc) {
@@ -63,7 +63,7 @@ class MyAlert {
                 color: kBackgroundColor,
                 child: Text(
                   btnTitle,
-                  style: textStyle,
+                  style: const TextStyle(fontFamily: 'morvarid', fontSize: 23),
                   textDirection: TextDirection.rtl,
                 ),
               ),
