@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:blurbox/blurbox.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:funtictac/constants.dart';
@@ -14,6 +15,7 @@ import 'package:funtictac/screens/game/components/timer.dart';
 import 'package:funtictac/screens/game/components/score_container.dart';
 import 'package:funtictac/utilities/audio_player.dart';
 import 'package:funtictac/screens/game/components/text_button.dart';
+import 'package:tapsell_plus/tapsell_plus.dart';
 
 Player player = Player();
 
@@ -32,12 +34,15 @@ class _GameScreenState extends State<GameScreen> {
     Player.resetData1();
     player.getPlayerSides();
     startTimer();
+    checkInternetConnection();
+    listenForConnectionChanges();
   }
 
   @override
   void dispose() {
     super.dispose();
     timer!.cancel();
+    TapsellPlus.instance.hideStandardBanner();
   }
 
   static const maxSeconds = 15;
@@ -243,6 +248,50 @@ class _GameScreenState extends State<GameScreen> {
       resetTimer();
       startTimer();
       Navigator.pop(context);
+    });
+  }
+
+  Future<void> ads() async {
+    const zoneId = "66d750e3d95d064a55ca8e61";
+    TapsellPlus.instance
+        .requestStandardBannerAd(
+        zoneId, TapsellPlusBannerType.BANNER_320x50, onResponse: (map) {
+      TapsellPlus.instance.showStandardBannerAd(map['response_id'].toString(), TapsellPlusHorizontalGravity.BOTTOM,
+          TapsellPlusVerticalGravity.RIGHT,
+          margin: const EdgeInsets.only(bottom: 10),
+
+          onOpened: (map) {
+            // Ad opened
+          }, onError: (map) {
+            // Error when showing ad
+          });
+      // SAVE the responseId
+    }, onError: (map) {
+      // Error when requesting for an ad
+    });
+  }
+
+  void checkInternetConnection() async {
+    var connectivityResult = await Connectivity().checkConnectivity();
+    if (connectivityResult == ConnectivityResult.none) {
+      MyAlert.showAlert(context, 'اینترنت قطع شده است!', '❌', 'وصل کردم', () {
+        Navigator.pop(context);
+        checkInternetConnection();
+      });
+    } else {
+      ads();
+    }
+  }
+  void listenForConnectionChanges() {
+    Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
+      if (result == ConnectivityResult.none) {
+        MyAlert.showAlert(context, 'اینترنت قطع شده است!', '❌', 'وصل کردم', () {
+          Navigator.pop(context);
+          checkInternetConnection();
+        });
+      }else{
+        ads();
+      }
     });
   }
 }

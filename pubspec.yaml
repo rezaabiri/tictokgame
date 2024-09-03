@@ -19,6 +19,8 @@ dependencies:
   tapsell_plus: ^2.2.7
   blurbox: 0.0.4
   flutter_svg: ^2.0.10+1
+  connectivity_plus: ^3.0.0
+
 
 dev_dependencies:
   flutter_test:
