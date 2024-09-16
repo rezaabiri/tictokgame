@@ -58,7 +58,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
                 const SizedBox(width: 20,),
                 Text(
-                  'فان تیک تاک',
+                  'نقطه‌باز',
                   textAlign: TextAlign.center,
                   style: kTextStyle.copyWith(
                     fontSize: ResponsiveUI.getFontSize(33.0),

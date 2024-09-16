@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "121198200117",
+    "project_id": "noghtebaz",
+    "storage_bucket": "noghtebaz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:121198200117:android:5ab378f2601e88d82cb87c",
+        "android_client_info": {
+          "package_name": "com.funtictac.funtictacgame"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH3bK8lEVBPNGaoGeKNtRJ_O73M1V0l0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
